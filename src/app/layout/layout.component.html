@@ -1,0 +1,44 @@
+<div class="w-full h-screen">
+  <div class="p-4 text-end">
+    <button (click)="downloadPdf()" class="bg-indigo-600 px-2 py-2 rounded-md text-white">
+      Download
+    </button>
+  </div>
+
+  <div class="p-4">
+    <h1>TinyMCE Angular Demo</h1>
+    <editor [(ngModel)]="content"  [init]="{
+        height: 500,
+        plugins: [
+          'a11ychecker',
+          'advlist',
+          'advcode',
+          'advtable',
+          'autolink',
+          'checklist',
+          'export',
+          'lists',
+          'link',
+          'image',
+          'charmap',
+          'preview',
+          'anchor',
+          'searchreplace',
+          'visualblocks',
+          'powerpaste',
+          'fullscreen',
+          'formatpainter',
+          'insertdatetime',
+          'media',
+          'table',
+          'help',
+          'wordcount'
+        ],
+        toolbar:
+          'export|undo redo | casechange blocks | bold italic backcolor | \
+     alignleft aligncenter alignright alignjustify | \
+     bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+      }" initialValue="Welcome to TinyMCE Angular" (onClick)="handleEvent(content)">
+    </editor>
+  </div>
+</div>
